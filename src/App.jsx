@@ -52,7 +52,7 @@ export default function App() {
             }
           />
           <Route
-            path="products/:productId"
+            path="/product"
             element={
               <Suspense fallback="loading">
                 <SingleProduct />

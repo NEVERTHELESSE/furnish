@@ -4,6 +4,7 @@ import { allProducts } from "../../data/allProducts";
 import ProductLoading from "../../components/loading/ProductLoading";
 import ProductStuff from "./ProductStuff";
 import { productType } from "../../types/cartTypes";
+import { Link } from "react-router-dom";
 
 export default function Products({ products, limit }) {
   const [pro, setPro] = useState<any>([]);
@@ -34,7 +35,7 @@ export default function Products({ products, limit }) {
               >
                 <FaHeart />
               </abbr>
-              <a href={`/furnish?product?${product.id}`}>
+              <Link to={`/product?productId=${product.id}`}>
                 <div className="w-full h-[20rem]">
                   <img
                     src={product.imageUrl}
@@ -42,7 +43,7 @@ export default function Products({ products, limit }) {
                     className="size-full hover:scale-105 duration-700"
                   />
                 </div>
-              </a>
+              </Link>
               <ProductStuff product={product} />
             </div>
           ))}

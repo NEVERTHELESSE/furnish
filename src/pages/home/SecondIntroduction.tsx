@@ -1,5 +1,6 @@
 import React from "react";
 import Features from "./Features";
+import { Link } from "react-router-dom";
 
 export default function SecondIntroduction() {
   const style =
@@ -24,10 +25,13 @@ export default function SecondIntroduction() {
               nesciunt aperiam exercitationem culpa fugiat error ea maxime
               deserunt, delectus
             </p>
-            <button className="bg-primaryColor px-8 py-3 rounded-full font-bold animate-bounce">
+            <Link
+              to="/products"
+              className="bg-primaryColor px-8 py-3 rounded-full font-bold animate-bounce"
+            >
               Shop Now
               <span className="font-extrabold ">&rarr;</span>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

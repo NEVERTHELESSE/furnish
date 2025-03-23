@@ -1,9 +1,13 @@
 import React from "react";
 import { allProducts } from "../../data/allProducts";
+import { useSearchParams } from "react-router-dom";
 
 export default function SingleProduct() {
-  const urls = window.location.search;
-  const viewProduct = allProducts.find((product) => product.id == urls);
+  const [searchParams] = useSearchParams();
+  const productId = searchParams.get("productId"); // ✅ This now works
+
+  console.log(productId);
+  const viewProduct = allProducts.find((product) => product.id == productId);
   const btn = "text-2xl py-2 px-4 m-2 rounded-2xl bg-fadedColor ";
   return (
     <div className="p-12 w-full h-[90vh] flex justify-around items-center">
