@@ -1,0 +1,34 @@
+.light {
+  --primaryColor: #9600e7;
+  --fadedColor: rgba(255, 166, 0, 0.487);
+  --bgColor: #efefef;
+  --fgColor: #01010a;
+  --shadowColor: #a8a8af50;
+  --secondaryColor: orange;
+}
+.dark {
+  --primaryColor: #12095c;
+  --fadedColor: rgba(3, 1, 151, 0.983);
+  --bgColor: #1d1d1f;
+  --fgColor: #f8f8f8;
+  --shadowColor: #403f3f60;
+  --secondaryColor: rgb(121, 81, 6);
+}
+body {
+  scroll-behavior: smooth;
+  background-color: var(--bgColor);
+  overflow-x: hidden;
+  color: var(--fgColor);
+  transition: background-color 1s;
+  /* font-family: sans-serif; */
+}
+
+.contain {
+  backdrop-filter: blur(20px);
+  border-radius: 3rem;
+  overflow: hidden;
+}
+
+.gradient {
+  background: linear-gradient(blue, rgb(56, 41, 14));
+}
