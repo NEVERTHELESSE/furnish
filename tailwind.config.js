@@ -5,11 +5,12 @@ export default {
     extend: {
       colors: {
         primaryColor: "var(--primaryColor)",
-        fadedColor: "var(--fadedColor)",
-        bgColor: "var(--bgColor)",
-        fgColor: "var(--fgColor)",
-        shadowColor: "var(--shadowColor)",
         secondaryColor: "var(--secondaryColor)",
+        fadedColor: "var(--fadedColor)",
+        fgColor: "var(--fgColor)",
+      },
+      screens: {
+        smm: "max-width(1065px)",
       },
     },
   },

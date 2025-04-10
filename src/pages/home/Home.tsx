@@ -1,26 +1,25 @@
 import React, { Suspense, lazy } from "react";
-import FirstIntroduction from "./FirstIntroduction";
-import FifthIntroduction from "./FifthIntroduction";
-import BestSelling from "./BestSelling";
-import UniqueFurniture from "./UniqueFurniture";
-import Video from "./Video";
+import PageIndicator from "../../components/PageIndicator";
+import HomeDescription from "./HomeDescription";
+import HomeSortPost from "./HomeSortPost";
+import FirstPostLoading from "../../components/loading/FirstPostLoading";
+import HomeTopPost from "./HomeTopPost";
+import RecentPost from "../../layouts/RecentPost";
 
-const SecondIntroduction = lazy(() => import("./SecondIntroduction"));
-const ThirdIntroduction = lazy(() => import("./ThirdIntroduction"));
-const FourthIntroduction = lazy(() => import("./FourthIntroduction"));
+const HomeFirstPost = lazy(() => import("./HomeFirstPost"));
 export default function Home() {
   return (
-    <div className="w-full flex justify-center items-center flex-col">
-      <FirstIntroduction />
-      <Suspense fallback="loading">
-        <SecondIntroduction />
-        <ThirdIntroduction />
-        <FourthIntroduction />
-        <FifthIntroduction />
-        <BestSelling />
-        <UniqueFurniture />
-        <Video />
+    <>
+      <PageIndicator title="Home" description="Blogs & Article" />
+      <HomeDescription />
+      <HomeSortPost />
+      <Suspense fallback={<FirstPostLoading />}>
+        <div className="flex border-y">
+          <HomeFirstPost />
+          <HomeTopPost />
+        </div>
+        <RecentPost />
       </Suspense>
-    </div>
+    </>
   );
 }
